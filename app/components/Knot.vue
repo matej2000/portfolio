@@ -71,7 +71,6 @@ import * as THREE from 'three'
 import { reactive } from 'vue'
 import { useLoop } from '@tresjs/core'
 
-// "Uniforms" are variables we pass from JavaScript to the GPU
 const uniforms = {
   uTime: { value: 0 },
   uColor: { value: new THREE.Color('#4f46e5') }
@@ -82,6 +81,7 @@ const { onBeforeRender } = useLoop()
 onBeforeRender(({ delta, elapsed }) => {
   uniforms.uTime.value = elapsed
 })
+
 // Handles the position of each point. Use this to make points wave, pulse, or explode.
 const vShader = `
   varying float vHighlight;
