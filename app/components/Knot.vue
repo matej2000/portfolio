@@ -69,11 +69,13 @@ onBeforeRender(({ delta, elapsed }) => {
 <script setup>
 import * as THREE from 'three'
 import { reactive } from 'vue'
-import { useLoop } from '@tresjs/core'
+import { useLoop} from '@tresjs/core'
+
 
 const uniforms = {
   uTime: { value: 0 },
-  uColor: { value: new THREE.Color('#4f46e5') }
+  uColor: { value: new THREE.Color('#4f46e5'),
+   }
 }
 
 // Update uTime every frame to animate the shader
