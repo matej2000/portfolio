@@ -2,6 +2,7 @@
   <NuxtLayout>
     <NuxtRouteAnnouncer />
     <HeroSection />
+    <Experience />
   </NuxtLayout>
 </template>
 
