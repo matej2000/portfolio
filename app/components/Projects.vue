@@ -13,9 +13,13 @@
                         <p class="text-sm text-blue-400">{{ item.technologies }}</p>
                         <p class="text-lg mt-10">{{ item.description }}</p>
                     </div>
-                    <div class="p-2 mt-10 aspect-3/2 object-cover ">
-                        <img v-if="index!=3 & index!=4" :src="item.img_path" class="h-[300px] w-full object-cover object-top"/>
-                        <img v-else :src="item.img_path" class="h-[300px] w-full object-cover"/>
+                    <div class="p-2 mt-10">
+                        <a :href="item.link">
+                            <div class="h-[300px] w-full ">
+                                <img v-if="index!=3 & index!=4" :src="item.img_path" class="w-full h-full object-cover object-top hover:brightness-50"/>
+                                <img v-else :src="item.img_path" class="w-full h-full object-cover hover:brightness-50"/>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div v-else class="flex flex-col w-[500px] h-full mr-10">
@@ -37,7 +41,6 @@
         </div>
 
     </div>
-    <div class="w-full h-screen "></div>
 </template>
 
 <script setup>
@@ -51,11 +54,11 @@
 
     const projects = [
         // {code: 0},
-        {code: 1, title: "Weakly supervised animal detection", img_path: "/images/ws-detr_final-WS_DETR_complex_eng.png", description: "Proposed and implemented improvements to weakly supervised DETR. Conducted a comparative analysis against state-of-the-art weakly supervised frameworks.",technologies: "Python, PyTorch, PytorchLightning, Pandas", link: ""},
-        {code: 1, title: "Animal detection dashboard", img_path: "/images/wt.png", description: "Extension of my master's thesis, which enables easy use of models trained during my research.",technologies: "Vue.js, Javascript, Tailwind CSS, Django", link: ""},
-        {code: 1, title: "Fantasy premier league assistant", img_path: "/images/fpl_a.png", description: "A dynamic dashboard for Fantasy Premier League managers, built to provide real-time insights. The application interfaces with the official FPL REST API.",technologies: "Vue.js, Javascript, Tailwind CSS", link: "https://www.kaggle.com/competitions/pig-posture-recognition/overview"},
-        {code: 1, title: "Slovene sentence paraphrasing", img_path: "/images/slovene.png", description: "Leveraging back-translation techniques to fine-tune a T5 transformer. I engineered a synthetic dataset by translating Gigafida corpus samples into English and back to Slovene.",technologies: "Python, Transformers (HuggingFace), Google Cloud", link: ""},
-        {code: 1, title: "Pig posture recognition (Kaggle)", img_path: "/images/ppr.jpeg", description: "This active project serves as a sandbox for implementing advanced feature engineering, hyperparameter optimization, and ensemble modeling techniques to climb the leaderboard.",technologies: "Python, PyTorch, Pandas", link: ""},
+        {code: 1, title: "Weakly supervised animal detection", img_path: "/images/ws-detr_final-WS_DETR_complex_eng.png", description: "Proposed and implemented improvements to weakly supervised DETR. Conducted a comparative analysis against state-of-the-art weakly supervised frameworks.",technologies: "Python, PyTorch, PytorchLightning, Pandas", link: "https://github.com/matej2000/rtdetr_pytorch_wsdetr"},
+        {code: 1, title: "Animal detection dashboard", img_path: "/images/wt.png", description: "Extension of my master's thesis, which enables easy use of models trained during my research.",technologies: "Vue.js, Javascript, Tailwind CSS, Django", link: "https://github.com/matej2000/wildlife_recognition_vue"},
+        {code: 1, title: "Fantasy premier league assistant", img_path: "/images/fpl_a.png", description: "A dynamic dashboard for Fantasy Premier League managers, built to provide real-time insights. The application interfaces with the official FPL REST API.",technologies: "Vue.js, Javascript, Tailwind CSS", link: "https://github.com/matej2000/fpl"},
+        {code: 1, title: "Slovene sentence paraphrasing", img_path: "/images/slovene.png", description: "Leveraging back-translation techniques to fine-tune a T5 transformer. I engineered a synthetic dataset by translating Gigafida corpus samples into English and back to Slovene.",technologies: "Python, Transformers (HuggingFace), Google Cloud", link: "https://github.com/UL-FRI-NLP-Course-2022-23/nlp-course-team"},
+        {code: 1, title: "Pig posture recognition (Kaggle)", img_path: "/images/ppr.jpeg", description: "This active project serves as a sandbox for implementing advanced feature engineering, hyperparameter optimization, and ensemble modeling techniques to climb the leaderboard.",technologies: "Python, PyTorch, Pandas", link: "https://github.com/matej2000/pig_posture_recognition"},
         {code: 0, }
         ];
 
