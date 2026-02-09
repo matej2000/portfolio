@@ -1,7 +1,7 @@
 <template>
   <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
-    <nav class="fixed top-0 z-20 w-full background-blur-md bg-[#080d23]/70">
+    <nav class="fixed top-0 z-50 w-full backdrop-blur-xl bg-[#080d23]/70">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -21,10 +21,10 @@
                 <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About me</a>
+                    <a href="#about_me" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About me</a>
                     <a href="#experience" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Experience</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Skills</a>
+                    <a href="#projects" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                    <a href="#skills" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Skills</a>
                 </div>
                 </div>
             </div>
@@ -45,10 +45,10 @@
                 </div>
             </div>
             <div class="items-center m-auto w-full text-xl text-center">
-                <a @click="mobile_menu = false" href="/dashboard" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">About me</a>
-                <a @click="mobile_menu = false" href="/#models" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Experience</a>
-                <a @click="mobile_menu = false" href="/#capabilities" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Project</a>
-                <a @click="mobile_menu = false" href="/register" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Skills</a>           
+                <a @click="mobile_menu = false" href="#about_me" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">About me</a>
+                <a @click="mobile_menu = false" href="/#experience" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Experience</a>
+                <a @click="mobile_menu = false" href="/#projects" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Project</a>
+                <a @click="mobile_menu = false" href="/skills" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Skills</a>           
 
             </div>
             <div class="flex flex-row justify-center text-md pb-3 cursor-pointer">

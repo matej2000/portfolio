@@ -3,6 +3,9 @@
     <NuxtRouteAnnouncer />
     <HeroSection />
     <Experience />
+    <Projects/>
+    <Skills/>
+    <!-- <Test/> -->
   </NuxtLayout>
 </template>
 
