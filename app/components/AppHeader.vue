@@ -25,6 +25,7 @@
                     <a href="#experience" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Experience</a>
                     <a href="#projects" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
                     <a href="#skills" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Skills</a>
+                    <a href="#contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
                 </div>
                 </div>
             </div>
@@ -49,6 +50,7 @@
                 <a @click="mobile_menu = false" href="/#experience" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Experience</a>
                 <a @click="mobile_menu = false" href="/#projects" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Project</a>
                 <a @click="mobile_menu = false" href="/skills" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Skills</a>           
+                <a @click="mobile_menu = false" href="/contact" class="hover:bg-black hover:text-white mb-5 block rounded-md py-2 font-bold">Contact</a>           
 
             </div>
             <div class="flex flex-row justify-center text-md pb-3 cursor-pointer">
