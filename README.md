@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio (work in progress)
 This is my personal website built with nuxt.js, tailwind css, GSAP and TresJS.
 
 
