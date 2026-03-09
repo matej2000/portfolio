@@ -1,10 +1,11 @@
 <template>
-    <div id="projects" class="h-screen relative flex flex-col pt-20 w-full  bg-[#080d23]">
-        <div class="text-white text-9xl z-20 m-auto text-center">PROJECTS</div>
-        <div ref="proj_container" class="list_projects flex flex-row flex-nowrap mt-20 ml-10">
+    <div id="projects" class="min-h-screen relative flex flex-col pt-20 w-full  bg-[#080d23] overflow-hidden">
+        <div class="text-white text-9xl z-20 m-auto text-center ">PROJECTS</div>
+        <div ref="proj_container" class="list_projects items-center flex flex-col flex-nowrap mt-20 xl:ml-10 xl:flex-row xl:items">
             <div v-for="(item, index) in projects" 
             :key="index"
-            class="text-white border-black border-t divide-x-1 border-r p-4 text-center">
+            class="text-white p-4 text-center h-[600px] border-l-2 border-r-2 border-black xl:border-l-0 "
+            :class="{'border-t-2': index != 0, 'border-t-0 xl:border-t-2': index == 0}">
             
                 <div v-if="item.code == 1" class="flex flex-col w-[500px]">
                     
@@ -22,7 +23,7 @@
                         </a>
                     </div>
                 </div>
-                <div v-else class="flex flex-col w-[500px] h-full mr-10">
+                <div v-else class="flex flex-col w-[500px] h-full xl:mr-10">
                     <div class="m-auto">
                         <h1 class="text-2xl"> Want to see more? Check my Github</h1>
                         <button class="bg-blue-400 w-fit px-3 py-3 rounded-xl mt-5">View more</button>
@@ -64,26 +65,33 @@
 
 onMounted(() => {
     const el = proj_container.value;
-    const scrollAmount = el.scrollWidth - window.innerWidth;
+    const getScrollAmount = () => el.scrollWidth - window.innerWidth;
     
     const pausePadding = 50; 
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#projects",
-            start: "top top",
-            end: () => `+=${scrollAmount + pausePadding}`,
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-        }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1280px)", () => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#projects",
+                start: "top top",
+                end: () => `+=${getScrollAmount() + pausePadding}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+            }
+        });
+        tl.to({}, { duration: 0.1 }); 
+        tl.to(el, {
+            x: -getScrollAmount(),
+            ease: "none"
+        });
+        tl.to({}, { duration: 0.1 });
+
+        return () => {};
     });
-    tl.to({}, { duration: 0.1 }); 
-    tl.to(el, {
-        x: -scrollAmount,
-        ease: "none"
-    });
-    tl.to({}, { duration: 0.1 }); 
 })
 </script>
 
